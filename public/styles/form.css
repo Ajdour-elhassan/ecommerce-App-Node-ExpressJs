@@ -1,0 +1,20 @@
+label {
+  display: block;
+  padding: 0.1rem;
+  margin: var(--space-1);
+}
+
+input,
+textarea {
+  outline: none;
+  padding: 0.5rem;
+  border: 1.5px solid rgb(51, 38, 38);
+  font: inherit;
+  border-radius: var(--border-raduis-small);
+  width: 90%;
+}
+
+form .form-control input:hover {
+  border: 1px solid var(--text-color-1);
+  background-color: lightblue;
+}

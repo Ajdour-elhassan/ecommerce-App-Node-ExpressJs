@@ -1,0 +1,57 @@
+<%- include('../includes/head/', { pageTitle : 'Signup' }) %>
+<link rel="stylesheet" href="/styles/form.css" />
+<link rel="stylesheet" href="/styles/auth.css" />
+</head>
+</html>
+
+<!-- Header -->
+<%- include('../includes/header') %>
+
+<!-- Main content -->
+<main>
+  <h3>Create New Account</h3>
+  <form action="/signup" method="POST">
+    <p class="form-control">
+      <label for="email"> Email </label>
+      <input type="email" id="email" name="email" required />
+    </p>
+    <p class="form-control">
+      <label for="confirm-email"> Confirm Email </label>
+      <input type="email" id="confirm-email" name="confirm-email" required />
+    </p>
+    <p class="form-control">
+      <label for="password"> Password </label>
+      <input type="password" id="password" name="password" required />
+    </p>
+    <hr />
+    <p class="form-control">
+      <label for="fullname"> Full name </label>
+      <input type="text" id="fullname" name="fullname" required />
+    </p>
+    <p class="form-control">
+      <label for="Street"> Street </label>
+      <input type="text" id="Street" name="Street" required />
+    </p>
+    <p class="form-control">
+      <label for="postalcode"> Postal Code </label>
+      <input
+        type="postal"
+        id="postalcode"
+        name="postalcode"
+        minlength="5"
+        maxlength="5"
+        required
+      />
+    </p>
+    <p class="form-control">
+      <label for="city"> City </label>
+      <input type="text" id="city" name="city" required />
+    </p>
+    <button class="btn">Create an Account</button>
+    <p id="switch-form">
+      if you have already an account <a href="/login"> Login </a>
+    </p>
+  </form>
+</main>
+
+<%- include('../includes/footer') %>
