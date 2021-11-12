@@ -11,7 +11,7 @@ function userCredentials(email, password) {
 }
 
 function checkUserValidation(email, password, name, street, postal, city) {
-  const useIsValid =
+  return (
     email &&
     email.includes("@") &&
     password &&
@@ -23,13 +23,15 @@ function checkUserValidation(email, password, name, street, postal, city) {
     postal &&
     postal.trim().lenght === 5 &&
     city &&
-    !city.trim("");
-
-  if (!useIsValid) {
-    return;
-  }
-
-  return useIsValid;
+    !city.trim("")
+  );
 }
 
-module.exports = checkUserValidation;
+function emailsIsConfirmed(email, confirmEmail) {
+  return email === confirmEmail;
+}
+
+module.exports = {
+  checkUserValidation: checkUserValidation,
+  emailsIsConfirmed: emailsIsConfirmed,
+};

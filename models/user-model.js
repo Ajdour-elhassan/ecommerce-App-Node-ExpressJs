@@ -19,6 +19,17 @@ class User {
     return db.getDb().collection("users").findOne({ email: this.email });
   }
 
+  // Check User by existing email
+  async userIsAlreadyExisted() {
+    const userIsExisted = await this.getUserWithTheSameEmail();
+
+    if (userIsExisted) {
+      return true;
+    }
+
+    return false;
+  }
+
   // Signup method & store it in db
   async signUp() {
     const hashedPassword = await bcrypt.hash(this.password, 12); // hash password to 12 chraacters!
