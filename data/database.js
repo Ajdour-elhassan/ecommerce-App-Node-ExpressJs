@@ -13,7 +13,6 @@ function getDb() {
   if (!database) {
     throw new Error("no db connected! you must connect first");
   }
-
   return database;
 }
 

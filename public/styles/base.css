@@ -11,6 +11,7 @@ html {
   --color-primary-2: rgb(71, 17, 121);
   --color-primary-3: rgb(13, 9, 228);
   --text-color: rgb(46, 16, 16);
+  --background-color: rgb(46, 16, 16);
   --text-color-1: rgb(207, 97, 7);
   --text-color-2: #fff;
   --text-color-3: rgb(245, 62, 7);
@@ -32,7 +33,7 @@ html {
 
 body {
   background-color: var(--color-secondary);
-  color: var(--text-color);
+  color: var(--background-color);
   margin: 0;
   padding: 0;
 }
