@@ -8,7 +8,7 @@ function getSessionData(req) {
 
 function flashDataSession(req, data, action) {
   req.session.flashData = data;
-  req.session.dave(action);
+  req.session.save(action);
 }
 
 module.exports = {

@@ -15,7 +15,7 @@ function getSignUp(req, res) {
       fullname: "",
       street: "",
       city: "",
-      postal: "",
+      postalcode: "",
     };
   }
   res.render("customer/auth/signup", { inputData: sessionData });
@@ -53,6 +53,7 @@ async function signup(req, res, next) {
         ...enteredData,
       },
       function () {
+        console.log("Invalid Input");
         res.redirect("/signup");
       }
     );
@@ -107,8 +108,8 @@ async function signup(req, res, next) {
   }
 }
 
+// ... Get Login
 function getLogin(req, res) {
-  // ...
   let sessionData = sessionFlash.getSessionData(req);
 
   if (!sessionData) {
@@ -142,8 +143,8 @@ async function login(req, res, next) {
         password: user.password,
       },
       function () {
-        res.redirect("/login");
         console.log("email or password is invalid");
+        res.redirect("/login");
       }
     );
 
@@ -171,7 +172,7 @@ async function login(req, res, next) {
     return;
   }
 
-  // User Session
+  // User Session & login successfully!
   authenticationUtil.createUserSession(req, existingUser, function () {
     console.log("login successfuly!");
     res.redirect("/");

@@ -12,9 +12,13 @@ html {
   --color-primary-3: rgb(13, 9, 228);
   --text-color: rgb(46, 16, 16);
   --background-color: rgb(46, 16, 16);
+  --black-color: rgb(46, 16, 16);
   --text-color-1: rgb(207, 97, 7);
   --text-color-2: #fff;
   --text-color-3: rgb(245, 62, 7);
+  --alert-color: #f04b42;
+  --success-color: #00cc00;
+  --color-white: rgb(223, 211, 211);
 
   /* margin */
   --space-1: 0.25rem;
@@ -70,4 +74,23 @@ a {
 
 .btn:hover {
   background-color: rgb(240, 103, 6);
+}
+
+/* alert Message */
+
+.alert {
+  border-radius: var(--border-raduis-small);
+  background-color: var(--alert-color);
+  color: var(--color-white);
+  padding: 0.5rem;
+}
+
+.alert h2 {
+  font-size: 1rem;
+  margin: var(--space-2) 0;
+  text-transform: uppercase;
+}
+
+.alert p {
+  margin: var(--space-2) 0;
 }

@@ -10,28 +10,34 @@
 <!-- Main content -->
 <main>
   <h3>Create New Account</h3>
+  <% if (inputData.errorMessage) {  %> 
+    <section class="alert">
+      <h2> Invalid Input </h2>
+      <p> <%= inputData.errorMessage %> </p>
+    </section>
+  <% } %>
   <form action="/signup" method="POST">
     <input type="hidden" name="_csrf" value="<%= locals.csrfToken %>"  />
     <p class="form-control">
       <label for="email"> Email </label>
-      <input type="email" id="email" name="email" required />
+      <input type="email" id="email" name="email" value="<%= inputData.email %>" required />
     </p>
     <p class="form-control">
       <label for="confirm-email"> Confirm Email </label>
-      <input type="email" id="confirm-email" name="confirm-email" required />
+      <input type="email" id="confirm-email" name="confirm-email"  value="<%= inputData.confirmEmail %>" required />
     </p>
     <p class="form-control">
       <label for="password"> Password </label>
-      <input type="password" id="password" name="password" required />
+      <input type="password" id="password" name="password"  value="<%= inputData.password %>" required />
     </p>
     <hr />
     <p class="form-control">
       <label for="fullname"> Full name </label>
-      <input type="text" id="fullname" name="fullname" required />
+      <input type="text" id="fullname" name="fullname"  value="<%= inputData.fullname %>" required />
     </p>
     <p class="form-control">
       <label for="Street"> Street </label>
-      <input type="text" id="street" name="street" required />
+      <input type="text" id="street" name="street"  value="<%= inputData.street %>" required />
     </p>
     <p class="form-control">
       <label for="postalcode"> Postal Code </label>
@@ -41,6 +47,7 @@
         name="postalcode"
         minlength="5"
         maxlength="5"
+        value="<%= inputData.postalcode %>"
         required
       />
     </p>

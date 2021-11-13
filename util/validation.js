@@ -10,7 +10,7 @@ function userCredentials(email, password) {
   );
 }
 
-function checkUserValidation(email, password, name, street, postal, city) {
+function checkUserValidation(email, password, name, street, postalcode, city) {
   return (
     email &&
     email.includes("@") &&
@@ -20,8 +20,8 @@ function checkUserValidation(email, password, name, street, postal, city) {
     !name.trim("") &&
     street &&
     !street.trim("") &&
-    postal &&
-    postal.trim().lenght === 5 &&
+    postalcode &&
+    postalcode.trim().lenght === 5 &&
     city &&
     !city.trim("")
   );
