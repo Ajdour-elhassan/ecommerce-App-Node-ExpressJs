@@ -1,15 +1,16 @@
-<header>
-  <h2><a href="/"> Middleshop </a></h2>
-  <nav>
-    <ul>
-      <% if(locals.isAuth) { %>
-      <li>
-        <form action="/logout" method="POST">
-          <input type="hidden" name="_csrf" value="<%= locals.csrfToken %>" />
-          <button>Logout</button>
-        </form>
-      </li>
-      <% } %>
-    </ul>
-  </nav>
+<header id="main-header">
+  <div class="logo"><a href="/"> Middleshop </a></div>
+  <nav><%- include('nav-items') %></nav>
+  <!-- Mobile Menu Button -->
+  <button class="mobile-menu-button">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 </header>
+<!-- Mobile Menu -->
+<aside class="mobile-menu">
+  <nav>
+    <nav><%- include('nav-items') %></nav>
+  </nav>
+</aside>

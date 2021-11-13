@@ -36,7 +36,7 @@ html {
 }
 
 body {
-  background-color: var(--color-secondary);
+  background-color: var(--background-color);
   color: var(--background-color);
   margin: 0;
   padding: 0;

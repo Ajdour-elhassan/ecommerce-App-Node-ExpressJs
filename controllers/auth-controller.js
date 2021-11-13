@@ -143,7 +143,6 @@ async function login(req, res, next) {
         password: user.password,
       },
       function () {
-        console.log("email or password is invalid");
         res.redirect("/login");
       }
     );
