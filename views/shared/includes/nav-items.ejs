@@ -5,9 +5,9 @@
 
   <!-- ... -->
   <% if (!locals.isAuth) { %>
-  <li><a href="/products"> shop </a></li>
-  <li><a href="/signup"> register </a></li>
-  <li><a href="/login"> login </a></li>
+  <li><a href="/products"> Shop </a></li>
+  <li><a href="/signup"> Register </a></li>
+  <li><a href="/login"> Login </a></li>
   <% } %>
 
   <!-- ... -->
@@ -17,8 +17,8 @@
 
   <!-- .... -->
   <% if (locals.isAdmin) { %>
-  <li><a href="/products"> manage Products </a></li>
-  <li><a href="/orders"> manage Orders </a></li>
+  <li><a href="/admin/products"> manage Products </a></li>
+  <li><a href="/admin/orders"> manage Orders </a></li>
   <% } %>
 
   <!-- ...  -->

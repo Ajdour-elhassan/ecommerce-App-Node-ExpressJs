@@ -62,9 +62,3 @@ db.connectToDatabase()
     console.log("failed to connect with db");
     console.log(error);
   });
-
-//... Set Port
-// app.listen(3000);
-
-// console.log(chalk.blue("Hello world!"));
-// console.log(chalk.yellow("the server is running in Port 3000"));
