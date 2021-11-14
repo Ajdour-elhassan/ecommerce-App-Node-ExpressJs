@@ -15,7 +15,7 @@ form {
 }
 
 form a {
-  color: var(--text-color-1);
+  color: var(--color-primary-2);
 }
 
 form a:hover,

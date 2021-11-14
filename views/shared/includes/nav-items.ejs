@@ -1,11 +1,11 @@
 <ul class="nav-items">
   <% if (!locals.isAdmin) { %>
-  <li><a href="/"> all products</a></li>
   <li><a href="/cart"> Cart</a></li>
   <% } %>
 
   <!-- ... -->
   <% if (!locals.isAuth) { %>
+  <li><a href="/products"> shop </a></li>
   <li><a href="/signup"> register </a></li>
   <li><a href="/login"> login </a></li>
   <% } %>
