@@ -8,12 +8,16 @@ input,
 textarea {
   outline: none;
   padding: 0.5rem;
-  border: 1.5px solid rgb(51, 38, 38);
+  border: 1.9px solid rgb(6, 78, 126);
   font: inherit;
   border-radius: var(--border-raduis-small);
   width: 90%;
 }
 
 form input:hover {
-  border: 1px solid var(--color-primary-3);
+  border: 1.9px solid var(--color-primary-3);
+}
+
+form textarea:hover {
+  border: 1.9px solid var(--color-primary-3);
 }
