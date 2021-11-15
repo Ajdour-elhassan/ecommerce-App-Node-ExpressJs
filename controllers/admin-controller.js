@@ -1,3 +1,18 @@
-function AdminProductsMangment(req, res) {}
+function getProducts(req, res) {
+  // ....
+  res.render("admin/products/all-products");
+}
+function getNewProduct() {
+  // ...
+}
 
-function AdminOrdersMangment(req, res) {}
+function addNewProduct(req, res) {
+  // ...
+  res.render("admin/products/add-new-product");
+}
+
+module.exports = {
+  getProducts: getProducts,
+  getNewProduct: getNewProduct,
+  addNewProduct: addNewProduct,
+};

@@ -46,7 +46,7 @@ header .logo {
   border-radius: var(--border-raduis-small);
 }
 
-.mobile-menu-button {
+#mobile-menu-button {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -60,7 +60,7 @@ header .logo {
   box-shadow: var(--shadow-meduim);
 }
 
-.mobile-menu-button span {
+#mobile-menu-button span {
   width: 2.25rem;
   height: 0.2rem;
   background-color: var(--color-white);
@@ -107,7 +107,7 @@ header .logo {
     position: relative;
   }
 
-  .mobile-menu-button {
+  #mobile-menu-button {
     display: none;
   }
 

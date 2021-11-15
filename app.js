@@ -11,6 +11,7 @@ const checkAuthStatusMiddlware = require("./middelwares/check-auth");
 const authRoute = require("./routes/auth-routes");
 const productsRoute = require("./routes/products-routes");
 const baseRoute = require("./routes/base-routes");
+const adminRoute = require("./routes/admin-routes");
 
 const app = express();
 app.set("view engine", "ejs");
@@ -45,6 +46,8 @@ app.use(authRoute);
 app.use(baseRoute);
 // ... Products route
 app.use(productsRoute);
+// ... Admin Route
+app.use("/admin", adminRoute);
 
 // ... Adding Error Handler Middelware to find & catch any error
 app.use(errorHandlerMiddlware);

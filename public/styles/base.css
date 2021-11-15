@@ -3,9 +3,9 @@
 }
 
 html {
-  font-family: "Roboto", sans-serif;
+  /* Fonts */
+  font-family: "Ubuntu", sans-serif;
   /* Colors */
-
   --color-primary-1: rgb(245, 3, 3);
   --color-secondary: rgb(211, 208, 208);
   --color-primary-2: rgb(71, 17, 121);
@@ -70,7 +70,19 @@ a {
 }
 
 .btn:hover {
-  background-color: rgb(240, 103, 6);
+  background-color: var(--color-primary-3);
+}
+
+.btn-alt {
+  background-color: transparent;
+  color: var(--color-primary-2);
+  border: solid 1px var(--color-primary-2);
+  border-radius: var(--border-raduis-small);
+}
+
+.btn-alt:hover {
+  color: var(--color-white);
+  background-color: var(--color-primary-3);
 }
 
 /* alert Message */
