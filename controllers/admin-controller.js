@@ -1,12 +1,18 @@
 const Product = require("../models/product-model");
 
-function getProducts(req, res) {
+async function getProducts(req, res, next) {
   // ....
-  res.render("admin/products/all-products");
+  try {
+    const AllProducts = await Product.findAllProducts();
+    res.render("admin/products/all-products", { allProducts: AllProducts });
+  } catch (error) {
+    next(error);
+    return;
+  }
 }
 
 // Get
-function getNewProduct(req, res) {
+async function getNewProduct(req, res, next) {
   // ...
   res.render("admin/products/add-new-product");
 }
@@ -23,7 +29,7 @@ async function addNewProduct(req, res, next) {
 
   // ...
   try {
-    await createNewProduct.saveNewProductData();
+    const createdProduct = await createNewProduct.saveNewProductData();
     res.redirect("/admin/products/add-new-product");
   } catch (error) {
     next(error);

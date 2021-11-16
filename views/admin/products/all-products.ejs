@@ -9,13 +9,19 @@
 <main>
   <h2> Products Admin Dashborad Pannel </h2>
    <section>
-     <h2> Products Mangament </h2>
+     <h2> Products Mangament </h2> 
      <p>
        <a class="btn" href="/admin/products/add-new-product"> add new product</a>
      </p>
    </section>
   <section> 
-    <p> All products list ... </p> 
+    <ul>
+       <% for (const product of allProducts ) { %> 
+      <li>
+        <%- include('includes/product-items', { product : product }) %>
+      </li>
+      <% } %> 
+    </ul>
  </section>
 </main>
 

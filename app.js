@@ -19,8 +19,9 @@ app.set("views", path.join(__dirname, "views"));
 
 // ... adding Static css style
 app.use(express.static("public"));
-
-//  ... Set Middleware express function
+// ... serving Image Staticly filter a Path only path that starts with /product/assets/ that handlers this mdiddlewre
+app.use("/products/assets", express.static("products-data"));
+//  ... Set Middleware express for coming request
 app.use(
   express.urlencoded({
     extended: false,

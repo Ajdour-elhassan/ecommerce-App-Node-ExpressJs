@@ -1,14 +1,26 @@
 const db = require("../data/database");
 
-class product {
+class Product {
   constructor(productData) {
     this.title = productData.title;
     this.image = productData.image;
-    this.summary = productData.summary;
     this.price = +productData.price;
     this.description = productData.description;
-    this.imagePath = `product-data/images/${productData.image}`;
-    this.imageUrl = `/product/assets/images/${productData.image}`;
+    // We dont store them in db , we need them in front end template
+    this.imagePath = `products-data/images/${productData.image}`;
+    this.imageUrl = `/products/assets/images/${productData.image}`;
+    if (productData._id) {
+      this.id = productData._id.toString();
+    }
+  }
+
+  // Get all products in Database & Store them in new Product Class
+  static async findAllProducts() {
+    const products = await db.getDb().collection("products").find().toArray();
+
+    return products.map((productDocument) => {
+      return new Product(productDocument);
+    });
   }
 
   async saveNewProductData() {
@@ -26,4 +38,4 @@ class product {
   }
 }
 
-module.exports = product;
+module.exports = Product;
