@@ -1,4 +1,6 @@
 <%- include('../../shared/includes/head/', { pageTitle : 'products' }) %>
+<link rel="stylesheet" href="/styles/auth.css" />
+<link rel="stylesheet" href="/styles/product-items.css" />
 </head>
 </html>
 
@@ -6,16 +8,15 @@
 <%- include('../../shared/includes/header') %>
 
 <!-- Main content -->
-<main>
+<main class="allProducts">
   <h2> Products Admin Dashborad Pannel </h2>
-   <section>
-     <h2> Products Mangament </h2> 
+   <section class="header-add">
      <p>
        <a class="btn" href="/admin/products/add-new-product"> add new product</a>
      </p>
    </section>
-  <section> 
-    <ul>
+  <section class="product"> 
+    <ul class="product-grid">
        <% for (const product of allProducts ) { %> 
       <li>
         <%- include('includes/product-items', { product : product }) %>

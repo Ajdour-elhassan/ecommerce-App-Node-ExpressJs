@@ -1,0 +1,23 @@
+<%- include('../../shared/includes/head/', { pageTitle : 'products detail' }) %>
+<link rel="stylesheet" href="/styles/product-items.css" />
+</head>
+</html>
+
+<!-- Header -->
+<%- include('../../shared/includes/header') %>
+
+<!-- Main content -->
+<main class="allProducts">
+  <h2> Products Details </h2>
+  <section class="product"> 
+    <ul class="product-grid">
+       <% for (const product of allProducts ) { %> 
+      <li>
+        <%- include('includes/product-items', { product : product }) %>
+      </li>
+      <% } %> 
+    </ul>
+ </section>
+</main>
+
+<%- include('../../shared/includes/footer') %>
