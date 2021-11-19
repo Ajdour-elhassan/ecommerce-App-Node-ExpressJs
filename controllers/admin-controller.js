@@ -70,17 +70,17 @@ async function updateProduct(req, res, next) {
 }
 
 // Delete Product
-async function RemoveProduct(req, res, next) {
+async function removeProduct(req, res, next) {
   let product;
   try {
     product = await Product.findById(req.params.id);
-    await product.removeProduct();
+    await product.removeProductItem();
+    console.log("product Delete succefully");
   } catch (error) {
-    next(error);
-    return;
+    return next(error);
   }
 
-  res.redirect("/admin/products", { deleteProduct: deleteProduct });
+  res.json({ message: "delete product!" });
 }
 
 module.exports = {
@@ -89,5 +89,5 @@ module.exports = {
   addNewProduct: addNewProduct,
   getupdateProduct: getupdateProduct,
   updateProduct: updateProduct,
-  RemoveProduct: RemoveProduct,
+  removeProduct: removeProduct,
 };
