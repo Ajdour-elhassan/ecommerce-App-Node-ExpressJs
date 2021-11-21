@@ -1,4 +1,6 @@
-<%- include('../../shared/includes/head/', { pageTitle : 'Signup' }) %>
+<%- include('../../shared/includes/head/', { pageTitle : 'products' }) %>
+<link rel="stylesheet" href="/styles/auth.css" />
+<link rel="stylesheet" href="/styles/product-items.css" />
 </head>
 </html>
 
@@ -6,9 +8,17 @@
 <%- include('../../shared/includes/header') %>
 
 <!-- Main content -->
-<main>
-  <h2> All Products </h2>
+<main class="allProducts">
+  <h2>  All Products </h2>
+  <section class="product"> 
+    <ul class="product-grid"> 
+      <% for (const product of products  ) { %> 
+        <li>
+          <%- include('../../shared/includes/products-items', { product : product }) %>
+        </li>
+        <% } %> 
+    </ul>
+ </section>
 </main>
 
 <%- include('../../shared/includes/footer') %>
-

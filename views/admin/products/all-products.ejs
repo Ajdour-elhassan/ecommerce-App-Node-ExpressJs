@@ -13,14 +13,14 @@
   <h2> Products Admin Dashborad Pannel </h2>
    <section class="header-add">
      <p>
-       <a class="btn" href="/admin/products/add-new-product"> add new product</a>
+       <a class="btn" href="/admin/products/add-new-product"> add new product </a>
      </p>
    </section>
   <section class="product"> 
     <ul class="product-grid">
-       <% for (const product of allProducts ) { %> 
+       <% for (const product of products ) { %> 
       <li>
-        <%- include('includes/product-items', { product : product }) %>
+        <%- include('../../shared/includes/products-items', { product : product }) %>
       </li>
       <% } %> 
     </ul>

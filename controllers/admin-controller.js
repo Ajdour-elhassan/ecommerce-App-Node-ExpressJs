@@ -4,8 +4,8 @@ const Product = require("../models/product-model");
 async function getProducts(req, res, next) {
   // ....
   try {
-    const AllProducts = await Product.findAllProducts();
-    res.render("admin/products/all-products", { allProducts: AllProducts });
+    const products = await Product.findAllProducts();
+    res.render("admin/products/all-products", { products: products });
   } catch (error) {
     next(error);
     return;

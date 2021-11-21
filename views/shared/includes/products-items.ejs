@@ -2,6 +2,7 @@
   <img src="<%= product.imageUrl  %>" alt="<%= product.title %>" />
   <h2><%= product.title %></h2>
   <div class="btn-items">
+    <% if(locals.isAdmin) { %>
     <a class="btn btn-alt" href="/admin/products/<%= product.id %>">
       View & Edit
     </a>
@@ -12,5 +13,8 @@
     >
       Delete
     </button>
+    <% } else { %>
+    <a class="btn btn-alt" href="/products/<%= product.id %>"> View Product </a>
+    <% } %>
   </div>
 </article>

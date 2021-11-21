@@ -1,9 +1,25 @@
-const express = require("express");
-// const productController = require("../controllers/product-controller");
-const router = express.Router();
+const Product = require("../models/product-model");
 
-router.get("/products", function (req, res) {
-  res.render("customer/products/all-products");
-});
+async function getAllProducts(req, res, next) {
+  try {
+    const products = await Product.findAllProducts();
+    res.render("customer/products/all-products", { products: products });
+  } catch (error) {
+    next(error);
+    return;
+  }
+}
 
-module.exports = router;
+async function getProductDetails(req, res, next) {
+  try {
+    const product = await Product.findById(req.params.id);
+    res.render("customer/products/products-detail", { product: product });
+  } catch (error) {
+    next(error);
+  }
+}
+
+module.exports = {
+  getAllProducts: getAllProducts,
+  getProductDetails: getProductDetails,
+};

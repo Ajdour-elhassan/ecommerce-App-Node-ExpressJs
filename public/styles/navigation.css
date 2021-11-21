@@ -35,7 +35,7 @@ header .logo {
 }
 
 /* logout btn */
-.nav-items button {
+.nav-items li #logout-button {
   cursor: pointer;
   font: inherit;
   border: none;
