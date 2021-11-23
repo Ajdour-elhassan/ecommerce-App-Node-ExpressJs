@@ -62,14 +62,6 @@
   text-align: center;
 }
 
-#product-info button {
-  padding: 16px;
-  border: 1px solid;
-  color: #fff;
-  border-radius: var(--border-raduis-small);
-  background-color: var(--color-primary-2);
-}
-
 #product-description {
   background-color: #fff;
   color: var(--black-color);

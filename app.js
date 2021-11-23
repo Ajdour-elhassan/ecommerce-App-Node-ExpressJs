@@ -9,6 +9,7 @@ const addCsrfTokenMiddlware = require("./middelwares/csrf-token");
 const errorHandlerMiddlware = require("./middelwares/error-hanlder");
 const checkAuthStatusMiddlware = require("./middelwares/check-auth");
 const protectRoutesMiddelware = require("./middelwares/protect-routes");
+const cartMiddelware = require("./middelwares/cart");
 const authRoute = require("./routes/auth-routes");
 const productsRoute = require("./routes/products-routes");
 const baseRoute = require("./routes/base-routes");
@@ -35,6 +36,9 @@ app.use(expressSession(sessionConfiguraion));
 
 // ... csurf
 app.use(csrf());
+
+// Cart Middelware
+app.use(cartMiddelware);
 
 // Use Token middlware
 app.use(addCsrfTokenMiddlware);

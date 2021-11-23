@@ -9,7 +9,7 @@ html {
   --color-primary-1: rgb(245, 3, 3);
   --color-secondary: rgb(211, 208, 208);
   --color-primary-2: rgb(71, 17, 121);
-  --color-primary-3: #7b0e91;
+  --color-primary-3: #83049c;
   --black-color: rgb(46, 16, 16);
   --background-color: #938f9c;
   --text-color: #fff;
@@ -102,4 +102,14 @@ a {
 
 .alert p {
   margin: var(--space-2) 0;
+}
+
+/* Cart */
+
+.badge {
+  margin-left: var(--space-2);
+  padding: 0.26rem var(--space-4);
+  background: var(--color-primary-3);
+  color: var(--text-color);
+  border-radius: 10rem;
 }
