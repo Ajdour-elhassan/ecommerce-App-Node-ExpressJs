@@ -13,14 +13,14 @@ class Cart {
     };
     // Updating the cart if An Items is already exists
     for (let i = 0; i < this.items.length; i++) {
-      const item = this.items[i];
+      const item = this.items[i]; // get the index of an array
       if (item.product.id === product.id) {
         cartItems.quntity = cartItems.quntity + 1;
         cartItems.totalPrice = cartItems.totalPrice + product.price;
         this.items[i] = cartItems;
 
         // Update totalQuantity
-        this.totalQuantity = this.totalQuantity + 1; // this.totalQuantity++;
+        this.totalQuantity++; // this.totalQuantity = this.totalQuantity + 1;
         this.totalPrice = this.totalPrice + product.price;
         return;
       }
@@ -29,7 +29,7 @@ class Cart {
     this.items.push(cartItems);
     // Update totalQuantity
     this.totalQuantity = this.totalQuantity + 1; // this.totalQuantity++;
-    this.totalPrice = this.totalPrice + product.price;
+    this.totalPrice = this.totalPrice + product.price; // this.totalPrice += product.price;
   }
 }
 

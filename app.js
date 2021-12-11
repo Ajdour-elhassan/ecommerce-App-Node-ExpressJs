@@ -14,6 +14,7 @@ const authRoute = require("./routes/auth-routes");
 const productsRoute = require("./routes/products-routes");
 const baseRoute = require("./routes/base-routes");
 const adminRoute = require("./routes/admin-routes");
+const cartRoute = require("./routes/cart-routes");
 
 const app = express();
 app.set("view engine", "ejs");
@@ -29,6 +30,8 @@ app.use(
     extended: false,
   })
 );
+
+app.use(express.json()); // Check the incoming request by json data with apprepriate middlware
 
 // use Session express config
 const sessionConfiguraion = createSessionConfig();
@@ -52,6 +55,8 @@ app.use(authRoute);
 app.use(baseRoute);
 // ... Products route
 app.use(productsRoute);
+// ... Cart Route
+app.use("/cart", cartRoute);
 // Protect Admin Route
 app.use(protectRoutesMiddelware);
 // ... Admin Route
